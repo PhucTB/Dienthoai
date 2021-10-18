@@ -1,0 +1,321 @@
+
+.boloc{
+    display: flex;
+    /* min-height: 40px; */
+    height: 58px;
+    align-items: center;
+    justify-content: start;
+    padding: 4px 20px;
+    background-color: lemonchiffon;
+}
+.check_gia{
+    height: 20px;
+    margin-left: 20px;
+}
+
+.check_gia ul{
+    border-left: 1px solid black;
+    margin: 0px;
+    height: 0px;
+    display: inline;
+}
+.check_gia ul li{
+    list-style-type: none;
+    display: inline;
+}
+.check_gia ul li input{
+    margin-left: 40px;
+    display: inline;
+    text-decoration: none;
+}
+.head_boloc{
+    width: 1300px;
+    height: auto;   ;
+    background: rgb(255, 165, 0);
+
+}
+.dropbtn {
+    border: 0;
+    width: auto;
+    height: 40px;
+    color: #000;
+    padding: 0 16px 0 0;
+}
+.a_boloc .dropbtn:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 16px;
+    background-size: 8px auto;
+    background-position: center center;
+    background-image: url(https://stcv4.hnammobile.com/v7/images/icon/chervon_down_grey.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 18px;
+    right: 6px;
+}   
+.a_boloc .dropbtn::before{
+    transform: rotate(-180deg);
+}
+.link_boloc{
+    display: flex;
+    font-size: 14px;
+    color: #090809;
+    flex: 0 0 216px;
+    justify-content: flex-end;
+    border: none;
+    cursor: pointer;
+}
+.a_boloc{
+    width: 120px;
+    font-size: 15px;
+    margin-right: 20px;
+    height: 50px;
+    position: relative;
+    display: inline-block;
+}
+.a_boloc:hover, .a_boloc:focus {
+    background-color: #2980B9;
+  }
+.boloc button{
+    width: 100%;
+    height: 50px;
+}
+@media only screen and (min-width: 768px){
+    .boloc .link_boloc{
+    margin-left: auto;
+}
+}
+
+button, a.btn, input[type=submit], input[type=button] {
+    border: 0;
+    width: 130px;
+    padding: 7px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+    background: orange;
+    outline: 0;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+button:hover, a.btn:hover, input[type=submit]:hover, input[type=button]:hover {
+    opacity: 0.9;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content.show{
+    display: block;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .text1 {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    display: none;
+    /* top: 0; */
+}
+.a_boloc a:hover {background-color: #ddd;}
+.dropdown-content a {
+    font-size: 14px;
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+.prev, .next,.text {font-size: 11px}
+}
+.btn1 {
+border: none;
+outline: none;
+padding: 10px 16px;
+background-color: #f1f1f1;
+cursor: pointer;
+font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.pagingActive, .btn1:hover {
+background-color: #666;
+color: white;
+}
+/* css html: bo loc */
+ .filter-content {
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s padding ease;
+}
+.filter-content.active {
+    height: auto;
+    padding: 20px 0;
+    border-top: 1px solid #C4C4C4;
+}
+.filter-title {
+    margin: 0 0 12px 0;
+}
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+}
+.container-checkbox, .container-radio {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding-left: 22px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 30px;
+}
+.container-checkbox .checkmark:hover{
+    background-color: antiquewhite;
+}
+label {
+    font-weight: 500;
+    font-size: 14px;
+}
+input, textarea {
+    font-family: inherit;
+}
+input {
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    background-size: 8px auto;
+}
+label.container-checkbox a input[type="checkbox"] {
+    display: none;
+    /* color: black; */
+    /* width: 15px;
+    height: 15px;
+    position: relative;
+    right: 26px; */
+}
+/* label.container-checkbox a input[type="checkbox"] ~ .checkmark{
+    background-color: #F15A25;
+    border: 2px solid #F15A25;
+} */
+.container-checkbox input:checked ~ .checkmark:after, .container-radio input:checked ~ .checkmark:after, .container-radio input:checked ~ .checkmarkpk:after {
+    display: block;
+}
+.container-checkbox input:checked ~ .checkmark {
+    background-color: #F15A25;
+    border: 2px solid #F15A25;
+}
+.options label a {
+    display: inline-flex;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+.container-checkbox .checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 12px;
+    width: 12px;
+    border: 1px solid #636B7B;
+    border-radius: 2px;
+}
+.filter-title {
+    font-size: 18px;
+    margin: 0 0 12px 0;
+}
+ .filter-content .options {
+    margin: 0 0 20px 0;
+}
+ .options {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media only screen and (max-width: 1199.98px){
+     .options>label {
+    margin: 0 15px 4px 0;
+}}
+ .options>label {
+    margin: 0 40px 0 0;
+}
+.container-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 2px;
+    top: 0px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    border-radius: 2px;
+    -webkit-transform: rotate(
+45deg
+);
+    -ms-transform: rotate(45deg);
+    transform: rotate(
+45deg
+);
+}
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}

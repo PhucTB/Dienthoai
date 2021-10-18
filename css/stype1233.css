@@ -1,0 +1,59 @@
+.register_account {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #c0bebe;
+    border-radius: 3px;
+    float: left;
+    height: 372px;
+    padding: 20px;
+    width: 900px;
+}
+.register_account table td {
+    width: 55%;
+    margin-left: 40px;
+}
+.register_account form input[type="text"], .register_account form select {
+    font-size: 12px;
+    margin: 29px 0px;
+    color: #B3B1B1;
+    padding: 8px;
+    outline: none;
+    margin: 7px 0;
+    line-height: 25px;
+    width: 340px;
+}
+.product-desc{
+    float: left;
+}
+.cauhinh{
+    float: right;
+    width: 38.33%;
+}
+.parameter{
+    padding: 15px 0;
+}
+.parameter ul li p{
+    float: left;
+    margin: 0px;
+}
+.parameter ul li{
+    align-items: flex-start;
+    display: flex;
+    padding: 10px;
+}
+.parameter ul li:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+.parameter ul li:nth-child(even) {
+    background-color: #fff;
+}
+.main{
+    width: 1300px;
+    margin: auto;
+}
+.col {
+    padding: 0px;
+}
+.number{
+    width: 100%;
+    float: right;
+}

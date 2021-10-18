@@ -1,0 +1,150 @@
+body {
+  background: red;
+}
+.box{
+    margin: 20px;
+    float: left;
+    width: 285px;
+    height: 480px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    display: table;
+    text-align: center;
+    background-color: rgb(255, 255, 254);
+    border: 1px solid rgb(249, 249, 249);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+}
+
+.product-top{
+    width: 100%;
+    height: 30px;
+}
+.top_left{
+    float: left;
+    border:1px solid steelblue;
+    background-color: steelblue;
+    margin-left: 20px;
+}
+.top_right{
+    float: right;
+    margin-right: 20px;
+    border:1px solid orange;
+    background-color: orange;
+}
+.image{
+    border-radius: 15px;
+    width: 70%;
+    height: 55%;
+    opacity: 1;
+    transform: all .4s linear;
+}
+.box:hover .img{
+    filter: saturate(100%);
+    transform: rotate(-.25deg)  ;
+    opacity: 0.97;
+}
+.list-product .box:hover{
+    border-bottom: 1px solid rgb(226, 224, 224);
+    border-left:1px solid rgb(226, 224, 224) ;
+    background-color: rgb(244, 244, 244);
+    opacity: 0.92;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.box_size{
+    width: 100%;
+    height: 400px;
+}
+.text_none{
+    width: 100%;
+    height: 290px;
+    color: #fff;
+    background-color: #000;
+    backdrop-filter: blur(6px);
+    opacity: 0.8;
+    border: 1px solid rgb(226, 224, 224);
+    border-radius: 15px;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(220px);
+    transition: transform .4s cubic-bezier(.2, .8, .7,1.5);
+}
+.box:hover .text_none{
+    transform: translateY(0px);
+}
+.product-name{
+    font-size: 16px;
+}
+.product-name a{
+    text-decoration: none;
+    color: black;
+}
+.product-price{
+    color: black;
+}
+img {
+    display: inline;
+}
+section.review-rating .stars span {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 5px;
+    background-image: url(https://stcv4.hnammobile.com/v7/images/icon/star_grey.svg);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.stars-result {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    text-align: left;
+}
+.product-price ins {
+    font-size: 14px;
+    color: #636B7B;
+    margin: 0 4px 0 0;
+    text-transform: uppercase;
+
+}
+.product-price.vat {
+    color: #2F80ED;
+    text-align: start;
+    margin-left: 12px;
+}
+.sort{
+    margin-top: 24px;
+    margin-bottom: 20px;
+}
+.sort a{
+    margin: 0;
+    text-decoration: none;
+    padding: 12px 15px 12px 15px;
+    font-size: 16px;
+    line-height: 20px;
+    /* border-radius: 50%; */
+    color: #fff;
+    border: 1px solid orange;
+    transform: translateY(-5px);
+    transition: transform .3s linear;   
+
+}
+.sort a:hover{
+    transform: translateY(10px);
+    color: #fff;
+    background-color: wheat;
+}
+.btn12{
+    font-size: 20px;
+    text-align: center;
+    height: 140px;
+}
+a.phantrang {
+    background: orange;
+    padding: 20px;
+}
+
+
+
