@@ -435,6 +435,11 @@
 			$result = $this->db->select($query);
 			return $result;
 		}
+		public function sumbl($productid){
+			$query = "SELECT * FROM tbl_binhluan WHERE productId = '$productid'";
+			$result = $this->db->select($query);
+			return $result;
+		}
 		public function getLastestSamsung(){
 			$query = "SELECT * FROM tbl_product WHERE brandId = '6' order by productId desc LIMIT 1";
 			$result = $this->db->select($query);

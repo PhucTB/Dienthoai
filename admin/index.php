@@ -1,5 +1,5 @@
-﻿<?php include 'inc/header.php';?>
-<?php include 'inc/sidebar.php';?>
+﻿<?php include 'inc/header.php'; ?>
+<?php include 'inc/sidebar.php'; ?>
 <style>
 .col-6_demo {
     height: 100px;
@@ -78,13 +78,41 @@ button.button {
         <h2> Admin</h2>
         <div class="block">
             <div class="row_table">
+
+
                 <div class="col-6_demo">
                     <div class="img_icon">
-                        <img src="img/pngegg (6).png" alt="">
+                        <img src="img/pngegg (1).png" alt="">
                     </div>
                     <div class="text_dv">
-                        <span>Chiết khấu</span>
-                        <p>100000vnd</p>
+                        <?php $gethd = $brand->show_tonghoadon();
+                        $tonghd = 0;
+                        if ($gethd) {
+                            while ($result = $gethd->fetch_assoc()) {
+                                $tonghd++;
+                            }
+                        }
+                        ?>
+                        <span>Tổng số hóa đơn</span>
+                        <p><?php echo $tonghd ?></p>
+                    </div>
+
+                </div>
+                <div class="col-6_demo">
+                    <div class="img_icon">
+                        <img src="img/clipart3391268.png" alt="">
+                    </div>
+                    <div class="text_dv">
+                        <?php $getsp = $brand->show_tongsp();
+                        $tongsp = 0;
+                        if ($getsp) {
+                            while ($result = $getsp->fetch_assoc()) {
+                                $tongsp = $tongsp + $result['quantity'];
+                            }
+                        }
+                        ?>
+                        <span>Tổng sản phẩm bán</span>
+                        <p><?php echo $tongsp ?>/34</p>
                     </div>
 
                 </div>
@@ -93,33 +121,30 @@ button.button {
                         <img src="img/pngegg (2).png" alt="">
                     </div>
                     <div class="text_dv">
+                        <?php $get_doanhthu = $brand->show_tongdoanhthu();
+                        $tong = 0;
+                        if ($get_doanhthu) {
+                            while ($result = $get_doanhthu->fetch_assoc()) {
+                                $tong = $tong + $result['Tong'];
+                            }
+                        }
+                        ?>
                         <span>Tổng doanh thu</span>
-                        <p>100000vnd</p>
+                        <p><?php echo $tong . " " . "VNĐ" ?></p>
                     </div>
 
                 </div>
                 <div class="col-6_demo">
                     <div class="img_icon">
-                        <img src="img/pngegg (3).png" alt="">
+                        <img src="img/pngegg (6).png" alt="">
                     </div>
                     <div class="text_dv">
-                        <span>Tổng tiền vốn</span>
-                        <p>100000vnd</p>
+                        <span>Chiết khấu</span>
+                        <p><?php echo $tong * 1 / 100 . " " . "VNĐ" ?></p>
                     </div>
-
-                </div>
-                <div class="col-6_demo">
-                    <div class="img_icon">
-                        <img src="img/pngegg (7).png" alt="">
-                    </div>
-                    <div class="text_dv">
-                        <span>Lợi nhuận </span>
-                        <p>100000vnd</p>
-                    </div>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-<?php include 'inc/footer.html';?>
+<?php include 'inc/footer.html'; ?>

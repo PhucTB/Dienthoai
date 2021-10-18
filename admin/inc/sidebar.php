@@ -65,7 +65,7 @@ if ($check) {
                     </ul> -->
                 </li>
                 <!-- <li><a class="submenu" href="Baocaodoanhthu.php">Báo cáo doanh thu</a>
-                     <ul class="submenu">
+                    <ul class="submenu">
                         <li><a href="Baocaodoanhthu.php">Lợi nhuận</a></li>
                         <li><a href="doanhthu.php">Doanh thu sản phẩm</a> </li>
                         <li><a href="tonkho.php">Báo cáo tồn kho</a> </li>
