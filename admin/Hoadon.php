@@ -61,13 +61,13 @@ $ct = new cart();
                         <td><?php echo $fm->formatDate($result['Date']) ?></td>
                         <td>
                             <?php
-                                    if ($result['check_hd'] == 1) {
+                                    if ($result['check_hd'] == 2) {
                                     ?>
                             <a class="custom-btn btn-3" style="width: 200px;"
                                 href="Hoadon1.php?customerid=<?php echo $result['customer_id'] ?>&&id_hoadon=<?php echo $result['id_hoadon'] ?>&&admin=<?php echo $admin ?> ">Hóa
                                 đơn đã được tạo</a>
                             <?php
-                                    } elseif ($result['check_hd'] == 0) {
+                                    } elseif ($result['check_hd'] == 1) {
                                     ?>
                             <a class="custom-btn btn-4" style="width: 200px;"
                                 href="Hoadon1.php?customerid=<?php echo $result['customer_id'] ?>&&id_hoadon=<?php echo $result['id_hoadon'] ?>&&admin=<?php echo $admin ?> ">Tạo

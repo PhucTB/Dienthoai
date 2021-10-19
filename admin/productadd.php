@@ -102,7 +102,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                             <input type="text" name="price" placeholder="Nhập giá..." class="medium" />
                         </td>
                     </tr>
-
+                    <tr>
+                        <td>
+                            <label>Giá khuyen mai</label>
+                        </td>
+                        <td>
+                            <input type="text" name="price_promotion" placeholder="Nhập giá..." class="medium" />
+                        </td>
+                    </tr>
                     <tr>
                         <td>
                             <label>Tải hình ảnh</label>

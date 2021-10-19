@@ -1,29 +1,30 @@
 <?php
-    include '../lib/session.php';
+include '../lib/session.php';
 ?>
-<?php 
+<?php
 
 $filepath = realpath(dirname(__FILE__));
-include_once ($filepath.'/../classes/cart.php');
-include_once ($filepath.'/../helpers/format.php');
+include_once($filepath . '/../classes/cart.php');
+include_once($filepath . '/../helpers/format.php');
 $ct = new cart();
 $fm = new Format();
 ?>
 <?php
-  header("Cache-Control: no-cache, must-revalidate");
-  header("Pragma: no-cache"); 
-  header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
-  header("Cache-Control: max-age=2592000");
+header("Cache-Control: no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+header("Cache-Control: max-age=2592000");
 ?>
 <?php
-	
-	if(isset($_GET['id_hoadon'])){
-		$admin= $_GET['admin'];
-		$id = $_GET['customerid'];
-		$id_hoadon=$_GET['id_hoadon'];
-		$update_order= $ct->update_hoadon_order($id,$id_hoadon);
-		$update_hd= $ct->update_check_hd($id_hoadon,$admin);
-   	}
+
+if (isset($_GET['id_hoadon'])) {
+    $admin = $_GET['admin'];
+    $id = $_GET['customerid'];
+    $id_hoadon = $_GET['id_hoadon'];
+    $tg = date('d/m/y H:i:s');
+    $update_order = $ct->update_hoadon_order($id, $id_hoadon);
+    $update_hd = $ct->update_check_hd($id_hoadon, $admin, $tg);
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,15 +56,15 @@ $fm = new Format();
                                 <i class="fa fa-rocket"></i>
                             </div>
                             <?php
-						
-						$get_inbox_cart = $ct->get_inbox_hoadon($id,$_GET['id_hoadon']);
-						if($get_inbox_cart){
-							$i = 0;
-							$tong=0;
-							while($result = $get_inbox_cart->fetch_assoc()){
-								$i++;
-								$tong=$result['quantity']*$result['price'].' '.'VNĐ';
-				?>
+
+                            $get_inbox_cart = $ct->get_inbox_hoadon($id, $_GET['id_hoadon']);
+                            if ($get_inbox_cart) {
+                                $i = 0;
+                                $tong = 0;
+                                while ($result = $get_inbox_cart->fetch_assoc()) {
+                                    $i++;
+                                    $tong = $result['quantity'] * $result['price'] . ' ' . 'VNĐ';
+                            ?>
 
                             <div class="col-sm-6 top-right">
                                 <h3 class="marginright">INVOICE-1234578</h3>
@@ -95,12 +96,13 @@ $fm = new Format();
                                 <p class="lead marginbottom payment-info">Payment details</p>
                                 <p>Date: <?php echo $fm->formatDate($result['date_order']) ?></p>
                                 <p>VAT: DK888-777 </p>
-                                <p>Total Amount: <?php echo $result['Tong'].' '.'VNĐ' ?></p>
+                                <p>Total Amount: <?php echo $result['Tong'] . ' ' . 'VNĐ' ?></p>
                                 <p>Account Name: Flatter</p>
                             </div>
 
                         </div>
-                        <?php }}?>
+                        <?php }
+                            } ?>
                         <div class="row table-row">
                             <table class="table table-striped">
                                 <thead>
@@ -113,17 +115,17 @@ $fm = new Format();
                                     </tr>
                                 </thead>
                                 <?php
-						
-						$get_inbox_cart = $ct->get_inbox_hoadonlist($id,$_GET['id_hoadon']);
-						if($get_inbox_cart){
-							$i = 0;
-							$tong=0;
-                            $tongtien=0;
-							while($result = $get_inbox_cart->fetch_assoc()){
-								$i++;
-								$tong=$result['quantity']*$result['Gia'];
-                                $tongtien+=$tong;
-				?>
+
+                        $get_inbox_cart = $ct->get_inbox_hoadonlist($id, $_GET['id_hoadon']);
+                        if ($get_inbox_cart) {
+                            $i = 0;
+                            $tong = 0;
+                            $tongtien = 0;
+                            while ($result = $get_inbox_cart->fetch_assoc()) {
+                                $i++;
+                                $tong = $result['quantity'] * $result['Gia'];
+                                $tongtien += $tong;
+                        ?>
                                 <tbody>
                                     <tr>
 
@@ -131,15 +133,16 @@ $fm = new Format();
                                         <td><?php echo $result['productName'] ?></td>
                                         <td class="text-right"><?php echo $result['quantity'] ?></td>
                                         <td class="text-right"><?php echo $result['Gia'] ?></td>
-                                        <td class="text-right"><?php echo $tong.' '.'VNĐ' ?></td>
+                                        <td class="text-right"><?php echo $tong . ' ' . 'VNĐ' ?></td>
                                     </tr>
                                 </tbody>
-                                <?php }} 
-                //    $khuyenmai=$tongtien*10/100; 
-                   $thue=$tongtien*1/100;
-                //    $tongtra=$tongtien-$khuyenmai+$thue;
-                   $tongtra=$tongtien+$thue;
-                   ?>
+                                <?php }
+                        }
+                        //    $khuyenmai=$tongtien*10/100; 
+                        $thue = $tongtien * 1 / 100;
+                        //    $tongtra=$tongtien-$khuyenmai+$thue;
+                        $tongtra = $tongtien + $thue;
+                        ?>
 
                             </table>
 
@@ -154,10 +157,10 @@ $fm = new Format();
                                 <a href="Hoadon.php">Home</a>
                             </div>
                             <div class="col-xs-6 text-right pull-right invoice-total">
-                                <p>Subtotal :<?php echo $tongtien.' '.'VNĐ' ?> </p>
-                                <!-- <p>Khuyến mãi (10%) : <?php echo $khuyenmai.' '.'VNĐ' ?></p> -->
-                                <p>Thuế VAT (1%) : <?php echo $thue.' '.'VNĐ' ?> </p>
-                                <p>Tông tiền trả : <?php echo $tongtra.' '.'VNĐ' ?> </p>
+                                <p>Subtotal :<?php echo $tongtien . ' ' . 'VNĐ' ?> </p>
+                                <!-- <p>Khuyến mãi (10%) : <?php echo $khuyenmai . ' ' . 'VNĐ' ?></p> -->
+                                <p>Thuế VAT (1%) : <?php echo $thue . ' ' . 'VNĐ' ?> </p>
+                                <p>Tông tiền trả : <?php echo $tongtra . ' ' . 'VNĐ' ?> </p>
                             </div>
                         </div>
 

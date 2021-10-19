@@ -16,7 +16,6 @@ if ($check) {
             <ul class="section menu">
                 <?php if ($result['level'] == 2) {
                         ?>
-
                 <li><a class="submenu" href="sliderlist.php">Slider</a>
                     <!-- <ul class="submenu">
                         <li><a href="slideradd.php">Thêm slider</a> </li>
